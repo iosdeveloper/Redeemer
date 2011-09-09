@@ -27,22 +27,14 @@
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request {
-	NSString *responseString = [request responseString];
-	
-	if ([responseString length]) {
-		if (self.delegate != nil && [self.delegate respondsToSelector:@selector(redemptionFinished:withSuccess:)]) {
-			[self.delegate redemptionFinished:responseString withSuccess:YES];
-		}
-	} else {
-		if (self.delegate != nil && [self.delegate respondsToSelector:@selector(redemptionFinished:withSuccess:)]) {
-			[self.delegate redemptionFinished:nil withSuccess:NO];
-		}
+	if (self.delegate != nil && [self.delegate respondsToSelector:@selector(redemptionFinished:)]) {
+		[self.delegate redemptionFinished:request.responseString];
 	}
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
-	if (self.delegate != nil && [self.delegate respondsToSelector:@selector(redemptionFinished:withSuccess:)]) {
-		[self.delegate redemptionFailed:[request error]];
+	if (self.delegate != nil && [self.delegate respondsToSelector:@selector(redemptionFailed:)]) {
+		[self.delegate redemptionFailed:request.error];
 	}
 }
 

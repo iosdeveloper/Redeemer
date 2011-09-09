@@ -10,7 +10,7 @@
 
 @optional
 
-- (void)redemptionFinished:(NSString *)responseString withSuccess:(BOOL)redeemed;
+- (void)redemptionFinished:(NSString *)responseString;
 - (void)redemptionFailed:(NSError *)error;
 
 @end

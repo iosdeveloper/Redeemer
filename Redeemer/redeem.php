@@ -4,19 +4,20 @@ mysql_connect("your.server.com", "database_username", "database_password") or di
 
 mysql_select_db("database_name") or die(mysql_error());
 
-$query = "SELECT * from codes WHERE code='".mysql_real_escape_string($_POST['code'])."'";
+$code = mysql_real_escape_string($_POST["code"]);
+
+$query = "SELECT * FROM codes WHERE code = '".$code."'";
+
 $result = mysql_query($query) or die(mysql_error());
-$row = mysql_fetch_array( $result );
+
+$row = mysql_fetch_array($result);
 
 if ($row['id'] && $row['redeemed'] == 0) {
-	$query = "UPDATE codes SET redeemed=1 WHERE code='".mysql_real_escape_string($_POST['code'])."'";
-	$result = mysql_query($query) or die(mysql_error());
+	$query = "UPDATE codes SET redeemed = '1' WHERE code = '".$code."'";
 	
-	if ($row['issue'] == 0) {
-		echo 'OK';
-	} else {
-		echo $row['issue'];
-	}
+	mysql_query($query) or die(mysql_error());
+	
+	echo $row['issue'];
 }
 
 ?>
