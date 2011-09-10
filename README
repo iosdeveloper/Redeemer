@@ -6,5 +6,5 @@ Setting up Redeemer
  - By using a service like random.org create 12-character long strings.
  - Create new table records containing the random strings (your codes) and a 6-character long issue id like "3-2011" (in the sample project "-" is replaced with "/").
  - Change credentials in "redeem.php" and upload the file to your server.
- - Change URL to "redeem.php" in Redeemer.m.
+ - Change URL to "redeem.php" in "Redeemer.m".
  - "Build and Run".
