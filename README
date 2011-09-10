@@ -1,0 +1,10 @@
+Redeemer is meant to give you the idea of a voucher redemption system for your iOS app like App Store Promo Codes. Redeemer is especially made for a newspaper or magazine app but can be easily changed to suit any existing environment.
+
+Setting up Redeemer
+
+ - Create a new MySQL table by either uploading "codes.sql" or by copying the contents of the file.
+ - By using a service like random.org create 12-character long strings.
+ - Create new table records containing the random strings (your codes) and a 6-character long issue id like "3-2011" (in the sample project "-" is replaced with "/").
+ - Change credentials in "redeem.php" and upload the file to your server.
+ - Change URL to "redeem.php" in Redeemer.m.
+ - "Build and Run".
