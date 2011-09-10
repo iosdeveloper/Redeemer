@@ -1,5 +1,5 @@
 Redeemer is meant to give you an idea of a voucher redemption system for iOS apps like App Store Promo Codes.
-Redeemer is especially made for newspaper or magazine apps to redeem single issues but can be easily changed to suit any existing environment.
+Redeemer is especially made for newspaper or magazine apps to unlock single issues but can be easily changed to suit any existing environment.
 
 Setting up Redeemer:
  - Create a new MySQL table by either uploading "codes.sql" or by copying the contents of the file.
